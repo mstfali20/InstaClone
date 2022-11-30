@@ -7,6 +7,8 @@
 
 import UIKit
 import FirebaseStorage
+import FirebaseFirestore
+import FirebaseAuth
 
 class UploadViewController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate{
     @IBOutlet weak var imageview: UIImageView!
@@ -53,6 +55,24 @@ class UploadViewController: UIViewController , UIImagePickerControllerDelegate ,
                         if error == nil{
                             let imageUrl = url?.absoluteString
                             print(imageUrl)
+                            
+                            
+                            
+                            //DATABASE
+                            
+                            let firestoreDatabase = Firestore.firestore()
+                            var firestoreRefarance : DocumentReference? = nil
+                            let firistorePost = ["imageUrl":imageUrl!, "postetby":Auth.auth().currentUser?.email, "postComment" : self.nametext.text! , "Date":FieldValue.serverTimestamp(), "like" : 0] as [String : Any]
+                            
+                            firestoreRefarance = firestoreDatabase.collection("Posts").addDocument(data: firistorePost,completion: { (error) in
+                                if error != nil {
+                                    self.makealert(titleInput: "Error", MesageInput: error?.localizedDescription ?? "Error ")
+                                }else{
+                                    
+                                    self.imageview.image = UIImage(named: "uploadd")
+                                    self.nametext.text = ""
+                                    self.tabBarController?.selectedIndex = 0
+                                }                            })
                             
                         }
                     }

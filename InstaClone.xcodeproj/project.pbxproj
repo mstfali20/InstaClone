@@ -10,6 +10,7 @@
 		11C496AB394B0FC6D7722A8F /* Pods_InstaClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EEBFA0CFABCCD0294139DB /* Pods_InstaClone.framework */; };
 		A54322228649B08AB12030B3 /* Pods_InstaCloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C8EA51E56BE109D2A6A3DE /* Pods_InstaCloneTests.framework */; };
 		CC74D0DC91ABF6C5ADBF6B81 /* Pods_InstaClone_InstaCloneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE08B74931433A7EDDF88C03 /* Pods_InstaClone_InstaCloneUITests.framework */; };
+		D52AC04B2937912F009985F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D52AC04A2937912F009985F2 /* GoogleService-Info.plist */; };
 		D5613DFF2936837500629170 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5613DFE2936837500629170 /* AppDelegate.swift */; };
 		D5613E012936837500629170 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5613E002936837500629170 /* SceneDelegate.swift */; };
 		D5613E032936837500629170 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5613E022936837500629170 /* ViewController.swift */; };
@@ -20,7 +21,6 @@
 		D5613E192936837600629170 /* InstaCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5613E182936837600629170 /* InstaCloneTests.swift */; };
 		D5613E232936837600629170 /* InstaCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5613E222936837600629170 /* InstaCloneUITests.swift */; };
 		D5613E252936837600629170 /* InstaCloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5613E242936837600629170 /* InstaCloneUITestsLaunchTests.swift */; };
-		D5613E322936845F00629170 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5613E312936845F00629170 /* GoogleService-Info.plist */; };
 		D5613E34293687F600629170 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5613E33293687F600629170 /* HomeViewController.swift */; };
 		D5613E362936880900629170 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5613E352936880900629170 /* UploadViewController.swift */; };
 		D5613E382936881400629170 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5613E372936881400629170 /* SettingViewController.swift */; };
@@ -52,6 +52,7 @@
 		74E72D096BD7C489CE5F5D82 /* Pods-InstaClone-InstaCloneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone-InstaCloneUITests.debug.xcconfig"; path = "Target Support Files/Pods-InstaClone-InstaCloneUITests/Pods-InstaClone-InstaCloneUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AF18922297F3D1A3471282B4 /* Pods-InstaClone-InstaCloneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone-InstaCloneUITests.release.xcconfig"; path = "Target Support Files/Pods-InstaClone-InstaCloneUITests/Pods-InstaClone-InstaCloneUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C154C93994258D3162550B7F /* Pods-InstaCloneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaCloneTests.release.xcconfig"; path = "Target Support Files/Pods-InstaCloneTests/Pods-InstaCloneTests.release.xcconfig"; sourceTree = "<group>"; };
+		D52AC04A2937912F009985F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D5613DFB2936837500629170 /* InstaClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5613DFE2936837500629170 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5613E002936837500629170 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,7 +67,6 @@
 		D5613E1E2936837600629170 /* InstaCloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaCloneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5613E222936837600629170 /* InstaCloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaCloneUITests.swift; sourceTree = "<group>"; };
 		D5613E242936837600629170 /* InstaCloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaCloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D5613E312936845F00629170 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D5613E33293687F600629170 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D5613E352936880900629170 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		D5613E372936881400629170 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -121,7 +121,6 @@
 				7037B37F1259DA7112C235BD /* Pods-InstaCloneTests.debug.xcconfig */,
 				C154C93994258D3162550B7F /* Pods-InstaCloneTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -150,10 +149,10 @@
 		D5613DFD2936837500629170 /* InstaClone */ = {
 			isa = PBXGroup;
 			children = (
+				D52AC04A2937912F009985F2 /* GoogleService-Info.plist */,
 				D5613DFE2936837500629170 /* AppDelegate.swift */,
 				D5613E002936837500629170 /* SceneDelegate.swift */,
 				D5613E022936837500629170 /* ViewController.swift */,
-				D5613E312936845F00629170 /* GoogleService-Info.plist */,
 				D5613E042936837500629170 /* Main.storyboard */,
 				D5613E0A2936837600629170 /* Assets.xcassets */,
 				D5613E0C2936837600629170 /* LaunchScreen.storyboard */,
@@ -293,7 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5613E0E2936837600629170 /* LaunchScreen.storyboard in Resources */,
-				D5613E322936845F00629170 /* GoogleService-Info.plist in Resources */,
+				D52AC04B2937912F009985F2 /* GoogleService-Info.plist in Resources */,
 				D5613E0B2936837600629170 /* Assets.xcassets in Resources */,
 				D5613E062936837500629170 /* Main.storyboard in Resources */,
 			);
