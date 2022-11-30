@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseFirestore
+import SDWebImage
 
 class HomeViewController: UIViewController,UITableViewDelegate , UITableViewDataSource{
 
@@ -56,13 +57,20 @@ class HomeViewController: UIViewController,UITableViewDelegate , UITableViewData
          
          */
         
-        firistore.collection("Posts").addSnapshotListener { snapshot, error in
+        firistore.collection("Posts").order(by: "date", descending: true).addSnapshotListener { snapshot, error in
             if error != nil{
                 print(error?.localizedDescription)
                 
             }else{
                 
                 if snapshot?.isEmpty != true && snapshot != nil{
+                    
+                    self.imageArry.removeAll(keepingCapacity: false)
+                    self.userEmailArry.removeAll(keepingCapacity: false)
+                    self.nameArry.removeAll(keepingCapacity: false)
+                    self.likelArry.removeAll(keepingCapacity: false)
+                    self.dislikeArry.removeAll(keepingCapacity: false)
+                    self.dateArry.removeAll(keepingCapacity: false)
                     
                     for document in snapshot!.documents {
                         let documentID = document.documentID
@@ -105,11 +113,11 @@ class HomeViewController: UIViewController,UITableViewDelegate , UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HomeCell
         cell.nametext.text = nameArry[indexPath.row]
-        cell.datetext.text = "dateArry[indexPath.row]"
+        cell.datetext.text = "dateArry"
         cell.useremailtext.text = userEmailArry[indexPath.row]
         cell.likeIntText.text = String(likelArry[indexPath.row])
         cell.dislikeIntText.text =  String(dislikeArry[indexPath.row])
-        cell.imageview.image = UIImage(named: "uploadd")
+        cell.imageview.sd_setImage(with: URL(string: self.imageArry[indexPath.row]))
         return cell
     }
  
