@@ -24,11 +24,13 @@ class HomeViewController: UIViewController,UITableViewDelegate , UITableViewData
      */
     
     var userEmailArry = [String]()
-    var dateArry = [String]()
+    var dateArry = [Date]()
     var nameArry = [String]()
     var likelArry = [Int]()
     var dislikeArry = [Int]()
     var imageArry = [String]()
+    
+    var documantIDArry=[String]()
     
     @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
@@ -57,7 +59,7 @@ class HomeViewController: UIViewController,UITableViewDelegate , UITableViewData
          
          */
         
-        firistore.collection("Posts").order(by: "date", descending: true).addSnapshotListener { snapshot, error in
+        firistore.collection("Posts").order(by: "Date", descending: true).addSnapshotListener { snapshot, error in
             if error != nil{
                 print(error?.localizedDescription)
                 
@@ -71,9 +73,13 @@ class HomeViewController: UIViewController,UITableViewDelegate , UITableViewData
                     self.likelArry.removeAll(keepingCapacity: false)
                     self.dislikeArry.removeAll(keepingCapacity: false)
                     self.dateArry.removeAll(keepingCapacity: false)
+                    self.documantIDArry.removeAll(keepingCapacity: false)
+                    
+                    
                     
                     for document in snapshot!.documents {
                         let documentID = document.documentID
+                        self.documantIDArry.append(documentID)
                         
                         
                         if let postedby = document.get("postetby") as? String{
@@ -92,8 +98,10 @@ class HomeViewController: UIViewController,UITableViewDelegate , UITableViewData
                             self.dislikeArry.append(postdistlike)
                         }
                         
-                        if let postdate = document.get("date") as? String{
+                        if let postdate = document.get("Date") as? Date{
+                        
                             self.dateArry.append(postdate)
+                            
                         }
                        
                        
@@ -113,11 +121,12 @@ class HomeViewController: UIViewController,UITableViewDelegate , UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HomeCell
         cell.nametext.text = nameArry[indexPath.row]
-        cell.datetext.text = "dateArry"
+        cell.datetext.text = ""
         cell.useremailtext.text = userEmailArry[indexPath.row]
         cell.likeIntText.text = String(likelArry[indexPath.row])
         cell.dislikeIntText.text =  String(dislikeArry[indexPath.row])
         cell.imageview.sd_setImage(with: URL(string: self.imageArry[indexPath.row]))
+        cell.documentId.text = String(documantIDArry[indexPath.row])
         return cell
     }
  
